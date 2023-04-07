@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFR.Shared", "BFR.Shared\BF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFR.Mapping", "BFR.Mapping\BFR.Mapping.csproj", "{E26E4662-94C6-4DE3-8EB6-49839CD5C27B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFR.Core", "BFR.Core\BFR.Core.csproj", "{C85386A5-ACB5-4936-BC69-873E512C54EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFR.Core", "BFR.Core\BFR.Core.csproj", "{C85386A5-ACB5-4936-BC69-873E512C54EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

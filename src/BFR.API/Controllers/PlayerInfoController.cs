@@ -20,8 +20,9 @@ public class PlayerInfoController : ControllerBase
 		var guid = Guid.NewGuid();
 		var rand = new Random(guid.GetHashCode());
 
-		var accountDetails = new AccountDetailsDto(rand.Next(1, 1000))
+		var accountDetails = new AccountDetailsDto
 		{
+			AccountId = rand.Next(1, 1000),
 			CurrentStamina = rand.Next(10, 50),
 			Diamonds = rand.Next(0, 500),
 			Gold = rand.Next(100, 100000),

@@ -7,12 +7,8 @@ namespace BFR.Database.Entities;
 
 public class AccountDetails : IEntity
 {
-	[Key]
-	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-	public long Id { get; private set; }
-
 	[ForeignKey(nameof(Account))]
-	public int AccountId { get; set; }
+	public long AccountId { get; set; }
 
 	public virtual Account? Account { get; set; }
 
@@ -30,6 +26,10 @@ public class AccountDetails : IEntity
 
 	[Required]
 	public long Gold { get; set; }
+
+	[Key]
+	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+	public long Id { get; private set; }
 
 	void IEntity.OnModelCreating(ModelBuilder modelBuilder)
 	{

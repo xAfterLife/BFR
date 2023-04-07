@@ -8,10 +8,6 @@ namespace BFR.Database.Entities;
 
 public class Account : IEntity
 {
-	[Key]
-	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-	public long Id { get; private set; }
-
 	[Required]
 	public string Username { get; set; } = null!;
 
@@ -23,6 +19,10 @@ public class Account : IEntity
 	public byte[] AuthenticationSecret { get; set; } = null!;
 
 	public virtual AccountDetails? AccoundDetails { get; set; }
+
+	[Key]
+	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+	public long Id { get; private set; }
 
 	void IEntity.OnModelCreating(ModelBuilder modelBuilder)
 	{
