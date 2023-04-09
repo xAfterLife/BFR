@@ -1,11 +1,11 @@
-﻿namespace BFR.API.Intends;
+﻿namespace BFR.API.Intent;
 
-public class AuthIntent
+public class LoginIntent
 {
 	public string Username { get; set; }
 	public string Password { get; set; }
 
-	public AuthIntent(string username, string password)
+	public LoginIntent(string username, string password)
 	{
 		Username = username;
 		Password = password;

@@ -1,5 +1,8 @@
+using System.Text;
 using BFR.Database;
 using BFR.Mapping;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BFR.API;
 
@@ -17,6 +20,7 @@ public class Program
 
 		app.UseHttpsRedirection();
 		app.UseAuthorization();
+		app.UseAuthentication();
 		app.MapControllers();
 		app.Run();
 	}
@@ -44,5 +48,25 @@ public class Program
 			builder.AddConsole();
 		});
 		services.AddDbContext<BFRContext>();
+		services.AddAuthentication(options =>
+		{
+			options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+			options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+		}).AddJwtBearer(options =>
+		{
+			options.RequireHttpsMetadata = false;
+			options.SaveToken = true;
+			options.TokenValidationParameters = new TokenValidationParameters
+			{
+				ValidateIssuer = true,
+				ValidateAudience = true,
+				ValidateLifetime = true,
+				ValidateIssuerSigningKey = true,
+				ValidIssuer = "Jwt:Issuer",
+				ValidAudience = "Jwt:Audience",
+				IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("abcdefghijklmnopqrstuvwxyz")),
+				ClockSkew = TimeSpan.Zero
+			};
+		});
 	}
 }

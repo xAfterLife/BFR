@@ -31,7 +31,7 @@ public class AccountDetails : IEntity
 	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 	public long Id { get; private set; }
 
-	void IEntity.OnModelCreating(ModelBuilder modelBuilder)
+	public void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		modelBuilder.Entity<AccountDetails>().Property(a => a.Level);
 		modelBuilder.Entity<AccountDetails>().Property(a => a.CurrentStamina);

@@ -24,7 +24,7 @@ public class Account : IEntity
 	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 	public long Id { get; private set; }
 
-	void IEntity.OnModelCreating(ModelBuilder modelBuilder)
+	public void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		modelBuilder.Entity<Account>().Property(a => a.Username).HasMaxLength(255);
 		modelBuilder.Entity<Account>().HasIndex(e => e.Username).IsUnique();
