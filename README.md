@@ -1,8 +1,6 @@
 # BFR
 
-## Introduction
-
-BFR is an PoC or the Start of the Official Brave Frontier Re:Coded Server-API
+BFR is an PoC or the Start of the Fan-Made Brave Frontier Re:Coded Server-API
 
 ## Prioritization
 
