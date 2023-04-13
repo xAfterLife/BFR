@@ -41,23 +41,27 @@ We also need to consider:
 
 The proposed folder structure for the solution is as follows:
 
-BFR.API
-- Controllers/
-- Intents/ (Model for Request)
-- Filters/
-BFR.Core
-- Services/
-- Enums/
-- Interfaces/
-- Entities/
-- DTO/
-- Queries/ (EF-Core compiled queries)
-BFR.Infrastructure
-- Caching/
-- Logging/
-- Database/
-  - Migrations/
-  - Repositories/
-- Mapping/
-BFR.Tests
-- ...
+- BFR.API
+  - Controllers/
+  - Intents/ (Model for Request)
+  - Filters/
+  
+- BFR.Core
+  - Services/
+  - Enums/
+  - Interfaces/
+  - Entities/
+  - DTO/
+  - Queries/ (EF-Core compiled queries)
+  
+- BFR.Infrastructure
+  - Caching/
+  - Logging/
+  - Database/
+    - Migrations/
+    - Repositories/
+  - Mapping/
+  
+- BFR.Tests
+  - ...
+
