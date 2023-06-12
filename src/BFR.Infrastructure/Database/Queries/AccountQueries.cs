@@ -9,7 +9,7 @@ public static class AccountQueries
 	///     Gets an account from the database that matches the specified credentials.
 	/// </summary>
 	/// <returns>An <see cref="Account" /> object that matches the specified credentials, or <c>null</c> if no match is found.</returns>
-	public static readonly Func<BFRContext, string, string, Task<Account?>> WithCredentialsAsync = EF.CompileAsyncQuery((BFRContext context, string username, string password) => context.Accounts.FirstOrDefault(x => x.Username == username && x.Password == password));
+	public static readonly Func<BFRContext, string, string, Task<Account?>> WithCredentialsAsync = EF.CompileAsyncQuery((BFRContext context, string username, string password) => context.Accounts.AsNoTracking().FirstOrDefault(x => x.Username == username && x.Password == password));
 
 	/// <summary>
 	///     Gets an account from the database with the specified Username.
